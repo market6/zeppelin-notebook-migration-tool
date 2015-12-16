@@ -38,7 +38,7 @@ def generate_new_notebook_id():
 def port_notebook(source_notebook_id, source_notebook_dir, target_notebook_dir, target_conf_file_path):
     ## check for name duplicates to be safe
     target_notebook_id = source_notebook_id
-    logging.info("porting notebook: %s", source_notebook_id)
+    logging.info("migrating notebook: %s", source_notebook_id)
     while target_notebook_id in listdir(target_notebook_dir):
         target_notebook_id = generate_new_notebook_id()
     if source_notebook_id != target_notebook_id:
@@ -77,10 +77,10 @@ def port_notebook(source_notebook_id, source_notebook_dir, target_notebook_dir, 
 
 
 def main(argv):
-    logging.basicConfig(filename= "port-notebook.log", format='%(levelname)s:%(message)s', level=logging.INFO)
+    logging.basicConfig(filename= "z-migration.log", format='%(levelname)s:%(message)s', level=logging.INFO)
     logging.info("Started with args: %s", argv)
-    help_str = """port-notebook.py -s <sourcedir> -t <targetdir> -c <confpath> -i <sourcenotebookid> \n
-example: $python port-notebook.py -s ../z2/notebook -t ../z1/notebook -c ../z1/conf/interpreter.json
+    help_str = """z-migration.py -s <sourcedir> -t <targetdir> -c <confpath> -i <sourcenotebookid> \n
+example: $python z-migration.py -s ../z2/notebook -t ../z1/notebook -c ../z1/conf/interpreter.json
 """
     source_notebook_ids = None
     try:
