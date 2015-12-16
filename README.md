@@ -17,3 +17,4 @@ python z-migration.py -s <sourcedir> -t <targetdir> -c <confpath> -i <sourcenote
 - If the ID already exists at the target, a new random ID will be generated. This can result in duplicate notebooks (say, if you use the tool twice). That is to say, this tool will not overwrite notebooks at the target (if it does you've found a bug). 
 - If no `note.json` exists in the source, the tool will warn on an issue.  If you have 'issues' reported, check the logs. 
 - The tool will generate a log file in the directory from which it was run.
+- You may need to restart zeppelin to see the new notebooks.
