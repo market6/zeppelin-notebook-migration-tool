@@ -8,6 +8,7 @@ python z-migration.py -s <sourcedir> -t <targetdir> -c <confpath> -i <sourcenote
 ```
 - *-s*: source directory of notebook(s) **required** *eg* `/opt/zeppelin_old/notebook`
 - *-t*: target directory of notebook(s) **required** *eg* `/opt/zeppelin_new/notebook`
+- *-c*: target instance interpretter config json **required** *ed* `/opt/zepplin_new/conf/interpreter.json`
 - *-i*: id of notebook **optional** *eg* `2B3SVVCBG`
 
 #### Notes
